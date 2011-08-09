@@ -6,7 +6,7 @@
 
 import os
 import fnmatch
-def del_pyc(root, patterns='*'):
+def all_files(root, patterns='*'):
     """
         
      """
@@ -18,7 +18,7 @@ def del_pyc(root, patterns='*'):
                     yield os.path.join(path, name)
 
 if __name__=='__main__':
-    for path in del_pyc(os.getcwd(),'*.py'):
+    for path in all_files(os.getcwd(),'*.py'):
         dirname = os.path.dirname(path)
         basename = os.path.basename(path)
         root, extention = os.path.splitext(basename)
